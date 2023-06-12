@@ -1,5 +1,6 @@
 package ProjetoFinalJAVA;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import javax.annotation.processing.SupportedOptions;
@@ -7,7 +8,10 @@ import javax.annotation.processing.SupportedOptions;
 public class App {
     public static void main(String[] args) {
 
+        ArrayList<String> contas = new ArrayList<>();
+
         CriarConta criarConta = new CriarConta();
+        
         Scanner sc = new Scanner(System.in);
 
         boolean agencia = true;
@@ -18,6 +22,7 @@ public class App {
 
            System.out.println("Bem - Vindo !!!");
            System.out.println(" O que você deseja fazer "
+           +"\n0 : Sair"
            +"\n1 : Criar uma nova conta"
            +"\n2 : Acessar uma conta existente");
             int escolha = sc.nextInt();
@@ -44,8 +49,10 @@ public class App {
                System.out.println("Você escolheu acessar uma conta existente ");
 
                
+            } else if (escolha == 0){
+                agencia = false;
             } else {
-             System.out.println("Digite um número válido!");
+                System.out.println("Digite um número válido!");
             }
 
 
