@@ -1,17 +1,13 @@
 package ProjetoFinalJAVA;
 
-public class Pessoas {
+public abstract class Pessoas {
     // superclasse
     // atributos
     String nome;
     int numeroDaConta;
     double saldo;
-    String cpf;
-    String cnpj;
+
     // métodos
-
-    // construtor
-
     // getters and setters
     public String getNome() {
         return nome;
@@ -36,50 +32,41 @@ public class Pessoas {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public String getCnpj() {
-        return cnpj;
-    }
-
-    public void setCnpj(String cnpj) {
-        this.cnpj = cnpj;
-    }
-
     // métodos diversos
 
-
-    public double VerificarSaldo() {
-
-        return saldo;
+    public void VerificarSaldo() {
+        System.out.println("Saldo Atual: R$ "+saldo);
     }
 
-    public double Saque(double valorSacado) {
-        saldo -= valorSacado;
-
-        return saldo;
+    public void Saque(double valorSacado) {
+        if (valorSacado <= saldo) {
+            saldo -= valorSacado;
+            System.out.println(" Saque de R$ " + valorSacado + " realizado com sucesso");
+            System.out.println("Saldo atual : R$ " + saldo);
+        } else {
+            System.out.println("Saldo Insuficiente!!");
+        }
     }
 
-    public double Deposito(double valorDepositado) {
+    public void Deposito(double valorDepositado) {
         saldo += valorDepositado;
 
-        return saldo;
+        System.out.println(" Depósito de R$ " + valorDepositado + " realizado com sucesso");
+
+        System.out.println(" Saldo atual: R$ " + saldo);
     }
 
-    public double Emprestimo(double valorEmprestimo) {
-        if ( valorEmprestimo > 0 && valorEmprestimo < 20000) {
-        System.out.println("Digite um valor válido ao banco");
+    public void Emprestimo(double valorEmprestimo) {
+
+        if (valorEmprestimo > 0 && valorEmprestimo < 20000) {
+            System.out.println("Digite um valor válido ao banco");
         } else {
             saldo += valorEmprestimo;
         }
 
-      return saldo;
     }
+
+    
+
+    
 }

@@ -1,16 +1,22 @@
 package ProjetoFinalJAVA;
 
 public class PessoaFisica extends Pessoas {
-    String nome;
-    int numeroDaConta;
-    double saldo;
     String cpf;
 
-    public PessoaFisica(String nome, int numeroDaConta, String cpf) {
-        this.nome = nome;
-        this.numeroDaConta = numeroDaConta;
+    //getters and setters
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
+    public void InformacoesGeraisPF() {
+        System.out.println("Nome da Conta: " +nome);
+        System.out.println("CPF: " +cpf);
+        System.out.println("Número da conta: " +numeroDaConta);
+        System.out.println(" Saldo: R$ " +saldo);
+    }
     
 }
