@@ -1,4 +1,4 @@
-package ProjetoFinalJAVA;
+package ProjetoJAVA;
 
 public class PessoaJuridica extends Pessoas{
     String cnpj;
@@ -13,10 +13,12 @@ public class PessoaJuridica extends Pessoas{
     }
 
     public void InformacoesGeraisPJ() {
+        System.out.println("-----------x------------");
         System.out.println("Nome da Conta: " +nome);
-        System.out.println("Nome da Conta: " +cnpj);
+        System.out.println("CNPJ: " +cnpj);
         System.out.println("Número da conta: " +numeroDaConta);
         System.out.println(" Saldo: R$ " +saldo);
+        System.out.println("-----------x------------");
     }
     
 }

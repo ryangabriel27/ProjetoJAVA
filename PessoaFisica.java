@@ -1,4 +1,4 @@
-package ProjetoFinalJAVA;
+package ProjetoJAVA;
 
 public class PessoaFisica extends Pessoas {
     String cpf;
@@ -13,10 +13,12 @@ public class PessoaFisica extends Pessoas {
     }
 
     public void InformacoesGeraisPF() {
+        System.out.println("-----------x------------");
         System.out.println("Nome da Conta: " +nome);
         System.out.println("CPF: " +cpf);
         System.out.println("Número da conta: " +numeroDaConta);
         System.out.println(" Saldo: R$ " +saldo);
+        System.out.println("-----------x------------");
     }
     
 }

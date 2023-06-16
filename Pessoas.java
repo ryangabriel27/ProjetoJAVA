@@ -1,4 +1,4 @@
-package ProjetoFinalJAVA;
+package ProjetoJAVA;
 
 public abstract class Pessoas {
     // superclasse
@@ -41,7 +41,7 @@ public abstract class Pessoas {
     public void Saque(double valorSacado) {
         if (valorSacado <= saldo) {
             saldo -= valorSacado;
-            System.out.println(" Saque de R$ " + valorSacado + " realizado com sucesso");
+            System.out.println(" Saque de R$ " + valorSacado + " realizado com sucesso!!");
             System.out.println("Saldo atual : R$ " + saldo);
         } else {
             System.out.println("Saldo Insuficiente!!");
@@ -51,17 +51,18 @@ public abstract class Pessoas {
     public void Deposito(double valorDepositado) {
         saldo += valorDepositado;
 
-        System.out.println(" Depósito de R$ " + valorDepositado + " realizado com sucesso");
+        System.out.println(" Depósito de R$ " + valorDepositado + " realizado com sucesso!!");
 
         System.out.println(" Saldo atual: R$ " + saldo);
     }
 
     public void Emprestimo(double valorEmprestimo) {
 
-        if (valorEmprestimo > 0 && valorEmprestimo < 20000) {
-            System.out.println("Digite um valor válido ao banco");
-        } else {
+        if (valorEmprestimo > 0 && valorEmprestimo < 10000) {
+            System.out.println(" Empréstimo de R$ "+valorEmprestimo+" feito com sucesso!!");
             saldo += valorEmprestimo;
+        } else {
+            System.out.println("Digite um valor válido ao banco!");
         }
 
     }

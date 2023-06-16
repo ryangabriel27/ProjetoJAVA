@@ -1,4 +1,4 @@
-package ProjetoFinalJAVA;
+package ProjetoJAVA;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -20,16 +20,17 @@ public class App {
         int contPessoaJuridica = 0;
 
         while (aberta) {
-
+            System.out.println("-----------x------------");
             System.out.println("Bem - Vindo !!!");
             System.out.println(" O que você deseja fazer "
                     + "\n0 : Sair"
                     + "\n1 : Criar uma nova conta"
-                    + "\n2 : Acessar uma conta existente");
+                    + "\n2 : Acessar uma conta existente");      
             int escolha = sc.nextInt();
+            System.out.println(" ");
 
             if (escolha == 1) {
-
+                System.out.println(" ");
                 System.out.println("Você escolheu criar uma conta ");
 
                 System.out.println("Agora , escolha o tipo de conta que deseja criar: "
@@ -37,14 +38,16 @@ public class App {
                         + "\n2: Pessoa Física");
 
                 int tipoDeConta = sc.nextInt();
+                System.out.println(" ");
 
                 if (tipoDeConta == 1) {
 
                     contaPessoaJuridica[contPessoaJuridica] = new PessoaJuridica();
 
+
                     System.out.print("Digite o Nome da conta:");
                     contaPessoaJuridica[contPessoaJuridica].setNome(sc.next());
-
+                    System.out.println(" ");
                     System.out.print("Digite o CNPJ da conta:");
                     contaPessoaJuridica[contPessoaJuridica].setCnpj(sc.next());
 
@@ -52,26 +55,26 @@ public class App {
 
                     contaPessoaJuridica[contPessoaJuridica].setNumeroDaConta((1001 + contPessoaJuridica));
 
-                    System.out.println("O numero da sua conta é: "+contaPessoaJuridica[contPessoaJuridica].getNumeroDaConta());
-
+                    System.out.println("O numero da sua conta é: ** "+contaPessoaJuridica[contPessoaJuridica].getNumeroDaConta()+" **");
+                    System.out.println(" ");
                     System.out.println("Conta criada com sucesso!!!");
 
                     contPessoaJuridica++;
                 } else if (tipoDeConta == 2) {
 
                     contaPessoaFisica[contPessoaFisica] = new PessoaFisica();
-
+                    
                     System.out.print("Digite o Nome da conta:");
                     contaPessoaFisica[contPessoaFisica].setNome(sc.next());
-
+                    System.out.println(" ");
                     System.out.print("Digite o CPF da conta:");
                     contaPessoaFisica[contPessoaFisica].setCpf(sc.next());
 
                     contaPessoaFisica[contPessoaFisica].setSaldo(0);
 
                     contaPessoaFisica[contPessoaFisica].setNumeroDaConta((2001 + contPessoaFisica));
-                    System.out.println("O número da sua conta é: "+contaPessoaFisica[contPessoaFisica].getNumeroDaConta());
-
+                    System.out.println("O número da sua conta é: ** "+contaPessoaFisica[contPessoaFisica].getNumeroDaConta()+" **");
+                    System.out.println(" ");
                     System.out.println("Conta criada com sucesso!!!");
 
                     contPessoaFisica++;
@@ -85,6 +88,7 @@ public class App {
                 System.out.println("Escolha o tipo de conta que você deseja acessar: "
                         + "\n1: Pessoa Juridica"
                         + "\n2: Pessoa Física");
+                        System.out.println(" ");
                 int tipoDeConta2 = sc.nextInt();
 
                 if (tipoDeConta2 == 1) {
@@ -105,7 +109,7 @@ public class App {
 
                     boolean acessar = true;
                     while (acessar) {
-
+                        System.out.println("-----------x------------");
                         System.out.println("Bem - Vindo, " + contaPessoaJuridica[contaAtual].getNome());
                         System.out.println(" O que você deseja fazer "
                                 + "\n0 : Ver Saldo"
@@ -114,23 +118,34 @@ public class App {
                                 + "\n3 : Empréstimo"
                                 + "\n4 : Informações gerais"
                                 + "\n5 : Sair");
-
+                        System.out.println("-----------x------------");
                         int acao = sc.nextInt();
+                        System.out.println(" ");
 
                         if (acao == 0) {
                             contaPessoaJuridica[contaAtual].VerificarSaldo();
                         } else if (acao == 1) {
+                            System.out.println("-----------x------------");
                             System.out.print(" Digite o valor que você deseja sacar: ");
                             contaPessoaJuridica[contaAtual].Saque(sc.nextDouble());
+                            System.out.println("-----------x------------");
+                            System.out.println(" ");
                         } else if (acao == 2) {
+                            System.out.println("-----------x------------");
                             System.out.print(" Digite o valor que será depositado: ");
                             contaPessoaJuridica[contaAtual].Deposito(sc.nextDouble());
+                            System.out.println("-----------x------------");
+                            System.out.println(" ");
                         } else if (acao == 3) {
+                            System.out.println("-----------x------------");
                             System.out.print(" Digite o valor do empréstimo");
                             contaPessoaJuridica[contaAtual].Emprestimo(sc.nextDouble());
+                            System.out.println("-----------x------------");
+                            System.out.println(" ");
                         } else if (acao == 4) {
                             contaPessoaJuridica[contaAtual].InformacoesGeraisPJ();
                         } else if (acao == 5) {
+                            System.out.println("-----------x------------");
                             System.out.println("Você deseja sair? "
                                     + "\n1: Sim"
                                     + "\n2: Não");
@@ -166,7 +181,7 @@ public class App {
 
                     boolean acessar = true;
                     while (acessar) {
-
+                        System.out.println("-----------x------------");
                         System.out.println("Bem - Vindo, " + contaPessoaFisica[contaAtual].getNome());
                         System.out.println(" O que você deseja fazer "
                                 + "\n0 : Ver Saldo"
@@ -175,23 +190,37 @@ public class App {
                                 + "\n3 : Empréstimo"
                                 + "\n4 : Informações gerais"
                                 + "\n5 : Sair");
-
+                        System.out.println("-----------x------------");
                         int acao = sc.nextInt();
+                        System.out.println(" ");
 
                         if (acao == 0) {
+                            System.out.println("-----------x------------");
                             contaPessoaFisica[contaAtual].VerificarSaldo();
+                            System.out.println("-----------x------------");
+                            System.out.println(" ");
                         } else if (acao == 1) {
+                            System.out.println("-----------x------------");
                             System.out.print(" Digite o valor que você deseja sacar: ");
                             contaPessoaFisica[contaAtual].Saque(sc.nextDouble());
+                            System.out.println("-----------x------------");
+                            System.out.println(" ");
                         } else if (acao == 2) {
+                            System.out.println("-----------x------------");
                             System.out.print(" Digite o valor que será depositado: ");
                             contaPessoaFisica[contaAtual].Deposito(sc.nextDouble());
+                            System.out.println("-----------x------------");
+                            System.out.println(" ");
                         } else if (acao == 3) {
+                            System.out.println("-----------x------------");
                             System.out.print(" Digite o valor do empréstimo");
                             contaPessoaFisica[contaAtual].Emprestimo(sc.nextDouble());
+                            System.out.println("-----------x------------");
+                            System.out.println(" ");
                         } else if (acao == 4) {
                             contaPessoaFisica[contaAtual].InformacoesGeraisPF();
                         } else if (acao == 5) {
+                            System.out.println("-----------x------------");
                             System.out.println("Você deseja sair? "
                                     + "\n1: Sim"
                                     + "\n2: Não");
@@ -209,6 +238,8 @@ public class App {
 
                     }
                     // acessar conta existente
+                } else {
+                    System.out.println(" O nº que você digitou é inválido, tente novamente!");
                 }
 
             } else if (escolha == 0) {
